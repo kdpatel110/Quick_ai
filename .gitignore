@@ -1,0 +1,16 @@
+# Ignore dependencies
+client/node_modules/
+server/node_modules/
+
+# Ignore environment variables
+client/.env
+server/.env
+
+# Ignore build files
+client/dist/
+server/dist/
+server/build/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,49 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/home'
+import Layout from './pages/Layout'
+import Dashboard from './pages/Dashboard'
+import WriteArticle from './pages/WriteArticle'
+import Blogtitle from './pages/Blogtitle'
+import GenerateImages from './pages/Generateimages'
+import RemoveBackground from './pages/RemoveBackground'
+import ReviewResume from './pages/ReviewResume'
+import RemoveObject from './pages/RemoveObject'
+import Community from './pages/Community'
+import { useAuth } from '@clerk/clerk-react'
+import { useEffect } from 'react'
+import {Toaster} from 'react-hot-toast'
+import axios from 'axios'
+
+const App = () => {
+
+  // //just for testing api 
+  // const {getToken} = useAuth()
+  // useEffect( ()=>{
+  //   getToken().then( (token)=> console.log(token));
+  // }, [])
+
+  axios.defaults.baseURL = "http://localhost:3000"; // backend URL
+  axios.defaults.withCredentials = true; 
+
+  return (
+    <div>
+      <Toaster />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/ai' element={<Layout/>} >
+            <Route index element={<Dashboard/>} />
+            <Route path='write-article' element={<WriteArticle/>} />
+            <Route path='blog-titles' element={<Blogtitle/>} />
+            <Route path='generate-images' element={<GenerateImages/>} />
+            <Route path='remove-background' element={<RemoveBackground/>} />
+            <Route path='review-resume' element={<ReviewResume/>} />
+            <Route path='remove-object' element={<RemoveObject/>} />
+            <Route path='community' element={<Community/>} />
+        </Route>
+      </Routes>
+    </div>
+  )
+}
+
+export default App
