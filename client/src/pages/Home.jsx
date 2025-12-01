@@ -4,7 +4,7 @@ import AiTools from '../components/AiTools'
 import Testimonial from '../components/Testimonial'
 import Plan from '../components/Plan'
 import Footer from '../components/Footer'
-import Hero from '../components/hero'
+import Hero from '../components/Hero'
 import { Layout } from 'lucide-react'
 
 
